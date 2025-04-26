@@ -1,0 +1,9 @@
+.git
+.gitignore
+.gradle
+.idea
+bin
+build
+!build/libs
+README.md
+HELP.md 
