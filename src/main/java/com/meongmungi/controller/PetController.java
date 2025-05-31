@@ -32,7 +32,7 @@ public class PetController {
 
 
     @GetMapping
-    public ResponseEntity<List<PetResponseDto>> getAllDogs(
+    public ResponseEntity<List<PetResponseDto>> getAllPets(
             @AuthenticationPrincipal CustomOAuth2User customUser
     ) {
         User currentUser = customUser.getUser();
