@@ -48,5 +48,5 @@ spring:
             user-name-attribute: sub
 
 jwt:
-  secret: "JWT SECRET"
+  secret: ${JWT_SECRET}
   expiration: 86400000 # 24 hours
