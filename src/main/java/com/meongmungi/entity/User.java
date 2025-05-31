@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 @Getter
@@ -32,6 +35,13 @@ public class User {
 
     @Column
     private String profileImageUrl;
+
+    @OneToMany(
+            mappedBy = "owner",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Pet> dogs = new ArrayList<>();
 
     public enum AuthProvider {
         KAKAO, APPLE
