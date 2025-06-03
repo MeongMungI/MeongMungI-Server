@@ -29,6 +29,7 @@ public class PetService {
                 .gender(dto.getGender())
                 .weight(dto.getWeight())
                 .birthDate(dto.getBirthDate())
+                .photoUrl(dto.getPhotoUrl())
                 .owner(owner)
                 .build();
 
@@ -64,7 +65,7 @@ public class PetService {
         pet.setGender(dto.getGender());
         pet.setWeight(dto.getWeight());
         pet.setBirthDate(dto.getBirthDate());
-
+        pet.setPhotoUrl(dto.getPhotoUrl());
         return mapToDto(pet);
     }
 
@@ -85,6 +86,7 @@ public class PetService {
                 .gender(pet.getGender())
                 .weight(pet.getWeight())
                 .birthDate(pet.getBirthDate())
+                .photoUrl(pet.getPhotoUrl())
                 .build();
     }
 }

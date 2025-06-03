@@ -37,6 +37,8 @@ public class Pet {
     @Column(nullable = false)
     private LocalDate birthDate;
 
+    @Column
+    private String photoUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)

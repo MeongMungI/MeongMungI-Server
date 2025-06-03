@@ -34,4 +34,6 @@ public class PetRequestDto {
     @Past(message = "생일은 과거 날짜여야 합니다.")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
+
+    private String photoUrl;
 }

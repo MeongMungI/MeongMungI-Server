@@ -20,4 +20,6 @@ public class PetResponseDto {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
+
+    private String photoUrl;
 }
