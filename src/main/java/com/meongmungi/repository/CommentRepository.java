@@ -1,10 +1,10 @@
 package com.meongmungi.repository;
 
+import com.meongmungi.entity.Comment;
 import com.meongmungi.entity.Post;
 import com.meongmungi.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import javax.xml.stream.events.Comment;
 import java.util.List;
 import java.util.Optional;
 
