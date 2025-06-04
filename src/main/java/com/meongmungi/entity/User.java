@@ -43,6 +43,14 @@ public class User {
     )
     private List<Pet> dogs = new ArrayList<>();
 
+
+    @OneToMany(
+            mappedBy = "owner",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Post> posts = new ArrayList<>();
+
     public enum AuthProvider {
         KAKAO, APPLE
     }
