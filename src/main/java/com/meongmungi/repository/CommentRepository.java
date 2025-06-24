@@ -15,5 +15,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     // 특정 유저가 작성한 댓글 조회
     List<Comment> findAllByOwner(User owner);
 
+    List<Comment> findAllByPostAndParentCommentIsNull(Post post);
+
     Optional<Comment> findByIdAndOwner(Long commentId, User owner);
 }
