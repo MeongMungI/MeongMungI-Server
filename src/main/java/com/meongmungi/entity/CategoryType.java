@@ -1,7 +1,10 @@
 package com.meongmungi.entity;
 
+
 public enum CategoryType {
-    WALK_VERIFICATION,   // 산책인증
-    INFORMATION,         // 정보게시판
-    GENERAL              // 잡담게시판
+    GENERAL,            // 자유
+    POPULAR,            // 인기
+    WALK_VERIFICATION,  // 산책인증
+    INFORMATION,        // 정보공유
+    QUESTION            // 질문
 }
