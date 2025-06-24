@@ -56,16 +56,21 @@ public class PostService {
 
     /**
      * 카테고리별 게시글 리스트 조회
+     * null -> findall / GENERAL -> GENERAL
+     * POPULAR -> LIKES 기준 desc
      */
     @Transactional(readOnly = true)
     public List<PostResponseDto> getAllPosts(CategoryType category) {
         List<Post> posts;
-        if (category == null) {
-            posts = postRepository.findAll();
+        if (category == null || category == CategoryType.GENERAL) {
+            posts = (category == null)
+                    ? postRepository.findAll()
+                    : postRepository.findAllByCategory(category);
+        } else if (category == CategoryType.POPULAR) {
+            posts = postRepository.findAllOrderByLikesDesc();
         } else {
             posts = postRepository.findAllByCategory(category);
         }
-
         return posts.stream()
                 .map(this::mapToDto)
                 .collect(Collectors.toList());

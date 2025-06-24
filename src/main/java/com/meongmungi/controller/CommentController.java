@@ -25,12 +25,11 @@ public class CommentController {
     @PostMapping("/api/posts/{postId}/comments")
     public ResponseEntity<CommentResponseDto> createComment(
             @AuthenticationPrincipal CustomOAuth2User customUser,
-            @PathVariable("postId") Long postId,
+            @PathVariable Long postId,
             @Valid @RequestBody CommentRequestDto requestDto
     ) {
         User currentUser = customUser.getUser();
-        CommentResponseDto created = commentService.createComment(currentUser, postId, requestDto);
-        return ResponseEntity.ok(created);
+        return ResponseEntity.ok(commentService.createComment(currentUser, postId, requestDto));
     }
 
     /**
